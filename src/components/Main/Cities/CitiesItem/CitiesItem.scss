@@ -1,0 +1,12 @@
+.Cities__main_item{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.4fr 0.4fr 1fr;
+    p{
+        font-size: 24px;
+    }
+    img {
+        max-width: 42px;
+        max-height: 42px;
+    }
+}
