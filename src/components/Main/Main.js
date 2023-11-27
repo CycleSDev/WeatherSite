@@ -1,16 +1,15 @@
 import React from "react";
-import "./Main.scss";
-import { NowItem } from "./NowItem/NowItem";
+import { Now } from "./Now/Now";
 import { Cities } from "./Cities/Cities";
 import { Daylight } from "./Daylight/Daylight";
+import "./Main.scss";
 
 export const Main = () => {
-
-    return (
-        <div className="Main">
-         <NowItem />
-         <Cities />
-         <Daylight />
-        </div>
-    )
-}
+  return (
+    <div className="Main">
+      <Now />
+      <Cities />
+      <Daylight />
+    </div>
+  );
+};

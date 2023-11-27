@@ -2,14 +2,14 @@ import React from "react";
 import weatherSvg from "../../../weatherImg/ImportExportSVG";
 import "./CitiesItem.scss";
 
-export const CitiesItem = (citiesData) => {
+export const CitiesItem = (props) => {
   // Расчёт часа от GTM 0 в городах с учётом timezone, для иконки день/ночь
-  let hour = new Date().getUTCHours() + (citiesData.data.sys.timezone / 60 / 60)
+  const hour = new Date().getUTCHours() + (props.data.sys.timezone / 60 / 60)
 
   // Проверка кода погоды с сервера
   let weatherImg;
 
-  switch (citiesData.data.weather[0].id) {
+  switch (props.data.weather[0].id) {
     case 200:
     case 201:
     case 202:
@@ -98,7 +98,7 @@ export const CitiesItem = (citiesData) => {
   // Перевод названия городов на русский
   let cityName;
 
-  switch (citiesData.data.name) {
+  switch (props.data.name) {
     case "Saint Petersburg":
       cityName = "Санкт-Петербург";
       break;
@@ -124,8 +124,8 @@ export const CitiesItem = (citiesData) => {
   
   return (
     <div className="Cities__main_item">
-      <img src={weatherImg} title={citiesData.data.weather[0].description} alt={citiesData.data.weather[0].description} />
-      <p>{Math.round(citiesData.data.main.temp)}°C</p>
+      <img src={weatherImg} title={props.data.weather[0].description} alt={props.data.weather[0].description} />
+      <p>{Math.round(props.data.main.temp)}°C</p>
       <p>{cityName}</p>
     </div>
   );
